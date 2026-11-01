@@ -1,6 +1,7 @@
 import { Routes, Route, Navigate, useLocation } from "react-router-dom";
 import { useAuth } from "./context/AuthContext";
 import Navbar from "./components/Navbar";
+import Progress from "./pages/Progress";
 import Login from "./pages/Login";
 import Register from "./pages/Register";
 import Dashboard from "./pages/Dashboard";
@@ -37,6 +38,7 @@ export default function App() {
 
           <Route path="/" element={<Private><Dashboard /></Private>} />
           <Route path="/meals" element={<Private><Meals /></Private>} />
+          <Route path="/progress" element={<Private><Progress /></Private>} />
           <Route path="/workouts" element={<Private><Workout /></Private>} />
           <Route path="/progress" element={<Private><Dashboard /></Private>} />         
           <Route path="/profile" element={<Private><Profile /></Private>} />

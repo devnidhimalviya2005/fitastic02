@@ -18,3 +18,9 @@ export const sampleMeals = [
   { id: 4, foodName: 'Dal', category: 'lunch', quantity: 1, calories: 150 },
   { id: 5, foodName: 'Cooked rice', category: 'dinner', quantity: 1, calories: 200 },
 ]
+export const sampleWeights = [
+  { id: 1, date: '2026-10-01', weight: 62.5 },
+  { id: 2, date: '2026-10-08', weight: 62.0 },
+  { id: 3, date: '2026-10-15', weight: 61.6 },
+  { id: 4, date: '2026-10-22', weight: 61.2 },
+]

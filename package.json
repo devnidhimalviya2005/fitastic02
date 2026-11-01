@@ -1,0 +1,27 @@
+{
+  "name": "myfisatic",
+  "version": "1.0.0",
+  "description": "This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.",
+  "main": "index.js",
+  "scripts": {
+    
+    "scripts": {
+  "dev": "concurrently -n server,client -c blue,magenta \"npm run dev --prefix server\" \"npm run dev --prefix client\""
+ }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/devnidhimalviya2005/fitastic02.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/devnidhimalviya2005/fitastic02/issues"
+  },
+  "homepage": "https://github.com/devnidhimalviya2005/fitastic02#readme",
+  "devDependencies": {
+    "concurrently": "^10.0.6"
+  }
+}

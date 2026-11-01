@@ -1,32 +1,22 @@
-const express = require("express");
-const cors = require("cors");
-require("dotenv").config();
-const mongoose = require("mongoose");
-const workoutRoutes = require("./routes/workoutRoutes");
-const authRoutes = require("./routes/authRoutes");
+
+require('dotenv').config();
+const express = require('express');
+const cors = require('cors');
+const connectDB = require('./config/db');
+
 const app = express();
-const mealRoutes = require("./routes/mealRoutes");
-
-
 app.use(cors());
 app.use(express.json());
-app.use("/api/workouts", workoutRoutes);
-app.use("/api/auth", authRoutes);
-app.use("/api/meals", mealRoutes);
-app.get("/", (req, res) => {
-    res.send("Fitastic Backend is running!");
-});
+
+connectDB();
+
+app.get('/', (req, res) => res.send('Fitastic API running'));
+app.use('/api/auth', require('./routes/authRoutes'));
+app.use('/api/profile', require('./routes/profileRoutes'));
+app.use('/api/meals', require('./routes/mealRoutes'));
+app.use('/api/workouts', require('./routes/workoutRoutes'));
+app.use('/api/weights', require('./routes/weightRoutes'));
+app.use('/api/progress', require('./routes/progressRoutes'));
 
 const PORT = process.env.PORT || 5000;
-
-mongoose.connect(process.env.MONGO_URI)
-    .then(() => {
-        console.log("MongoDB connected successfully!");
-    })
-    .catch((error) => {
-        console.error("MongoDB connection failed:", error.message);
-    });
-
-app.listen(PORT, () => {
-    console.log(`Server is running on port ${PORT}`);
-});
+app.listen(PORT, () => console.log('Server on port ' + PORT));
