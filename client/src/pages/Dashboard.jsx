@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import { useAuth } from "../context/AuthContext";
 
 const API_URL =
-  import.meta.env.VITE_API_URL || "http://localhost:5000";
+  import.meta.env.VITE_API_URL || "http://localhost:5000/api";
 
 const COLORS = {
   green: "#244A3A",
@@ -64,7 +64,7 @@ export default function Dashboard() {
       try {
         const token = localStorage.getItem("fitastic_token");
 
-        const response = await fetch(`${API_URL}/api/workouts`, {
+        const response = await fetch(`${API_URL}/workouts`, {
           headers: {
             Authorization: `Bearer ${token}`,
           },
